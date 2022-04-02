@@ -1,0 +1,23 @@
+mybool: true
+myint: 3
+myfloat: 1.5
+mystring: "hey there"
+mylist:
+  - "something"
+  - "something else"
+mymap:
+  mysubbool: true
+mybad.key: "bad key"
+myanother.bad/key: "bad / key"
+myemptyMap: {}
+myCamelCaseInt: 32
+my1first_map:
+  1stsubbool: true
+mydeepmap:
+  mydeepmaplevel2:
+    mydeepmaplevel2int: 2
+    mydeepmaplevel3:
+      mydeepmaplevel4:
+        someint: 4
+# This is a comment
+mycomment: comment me

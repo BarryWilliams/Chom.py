@@ -1,0 +1,10 @@
+# on a mac:
+
+brew install python
+brew install python-tk
+brew link --overwrite python@3.9
+
+pip3 install pyyaml
+
+python3
+>>> import idlelib.idle
