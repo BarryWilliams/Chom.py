@@ -6,5 +6,6 @@ brew link --overwrite python@3.9
 
 pip3 install pyyaml
 
-python3
->>> import idlelib.idle
+chmod +x helm2kots.py
+
+./helm2kots.py test_values.yaml

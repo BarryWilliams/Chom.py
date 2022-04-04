@@ -21,3 +21,10 @@ mydeepmap:
         someint: 4
 # This is a comment
 mycomment: comment me
+
+mysamename:
+  mysamename:
+    mysamename: mysamename
+
+mysamename2:
+  mysamename2: mysamename2
