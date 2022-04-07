@@ -6,6 +6,4 @@ brew link --overwrite python@3.9
 
 pip3 install pyyaml
 
-chmod +x helm2kots.py
-
-./helm2kots.py test_values.yaml
+chmod +x chom.py
