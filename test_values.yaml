@@ -1,30 +1,27 @@
-mybool: true
-myint: 3
-myfloat: 1.5
-mystring: "hey there"
-mylist:
+myBool: true
+myInt: 3
+myFloat: 1.5
+myString: "hey there"
+myList:
   - "something"
   - "something else"
-mymap:
-  mysubbool: true
-mybad.key: "bad key"
-myanother.bad/key: "bad / key"
-myemptyMap: {}
-myCamelCaseInt: 32
-my1first_map:
-  1stsubbool: true
-mydeepmap:
-  mydeepmaplevel2:
-    mydeepmaplevel2int: 2
-    mydeepmaplevel3:
-      mydeepmaplevel4:
-        someint: 4
-# This is a comment
-mycomment: comment me
-
-mysamename:
-  mysamename:
-    mysamename: mysamename
-
-mysamename2:
-  mysamename2: mysamename2
+my_snake_case: Snake Case
+myCamelCase: Camel Case
+myMap:
+  mySubValue: true
+myAwkward.key: "Awkward key"
+myAwkward.slash/key: "Slash / key"
+myEmptyMap: {}
+myDeepMap:
+  foo:
+    bar:
+      baz:
+        qux: 4
+myMapOrdering:
+  1stMenu: This should be rendered last in the list
+  2ndConfig: This should be first
+  3rdConfig: This should be second
+mySameName:
+  mySameName:
+    mySameName: mysamename
+myNull: null

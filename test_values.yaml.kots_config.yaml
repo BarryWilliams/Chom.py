@@ -1,0 +1,189 @@
+
+apiVersion: kots.io/v1beta1
+kind: Config
+metadata:
+  name: config-sample
+spec:
+  groups:
+
+    - name: top_options
+      title: "Top Options "
+      description: ""
+      items:
+
+      - name: "my_awkward_slash_key"
+        title: "Set My Awkward Slash Key "
+        help_text: ""
+        type: "text"
+        default: 'Slash / key'
+
+      - name: "my_awkward_key"
+        title: "Set My Awkward Key "
+        help_text: ""
+        type: "text"
+        default: 'Awkward key'
+
+      - name: "my_camel_case"
+        title: "Set My Camel Case "
+        help_text: ""
+        type: "text"
+        default: 'Camel Case'
+
+      - name: "my_snake_case"
+        title: "Set My Snake Case "
+        help_text: ""
+        type: "text"
+        default: 'Snake Case'
+
+      - name: "my_string"
+        title: "Set My String "
+        help_text: ""
+        type: "text"
+        default: 'hey there'
+
+      - name: "my_float"
+        title: "Set My Float "
+        help_text: ""
+        type: "text"
+        default: '1.5'
+
+      - name: "my_int"
+        title: "Set My Int "
+        help_text: ""
+        type: "text"
+        default: '3'
+
+      - name: "my_bool"
+        title: "Set My Bool "
+        help_text: ""
+        type: "bool"
+        default: '1'
+
+    - name: my_map
+      title: "My Map "
+      description: ""
+      items:
+
+      - name: "my_map_menu_bool"
+        title: "Customize My Map "
+        help_text: ""
+        type: "bool"
+        default: '0'
+
+      - name: "my_map_my_sub_value"
+        title: "Set My Map My Sub Value"
+        help_text: ""
+        type: "bool"
+        default: '1'
+        when: 'repl{{ (ConfigOptionEquals "my_map_menu_bool" "1") }}'
+    - name: my_deep_map
+      title: "My Deep Map "
+      description: ""
+      items:
+
+      - name: "my_deep_map_menu_bool"
+        title: "Customize My Deep Map "
+        help_text: ""
+        type: "bool"
+        default: '0'
+
+    - name: my_deep_map_foo
+      title: "My Deep Map Foo"
+      description: ""
+      when: 'repl{{ (ConfigOptionEquals "my_deep_map_menu_bool" "1") }}'
+      items:
+
+      - name: "my_deep_map_foo_menu_bool"
+        title: "Customize My Deep Map Foo"
+        help_text: ""
+        type: "bool"
+        default: '0'
+        when: 'repl{{ (ConfigOptionEquals "my_deep_map_menu_bool" "1") }}'
+    - name: my_deep_map_foo_bar
+      title: "Foo Bar"
+      description: ""
+      when: 'repl{{ (and (ConfigOptionEquals "my_deep_map_menu_bool" "1") (ConfigOptionEquals "my_deep_map_foo_menu_bool" "1")) }}'
+      items:
+
+      - name: "my_deep_map_foo_bar_menu_bool"
+        title: "Customize Foo Bar"
+        help_text: ""
+        type: "bool"
+        default: '0'
+        when: 'repl{{ (and (ConfigOptionEquals "my_deep_map_menu_bool" "1") (ConfigOptionEquals "my_deep_map_foo_menu_bool" "1")) }}'
+    - name: my_deep_map_foo_bar_baz
+      title: "Bar Baz"
+      description: ""
+      when: 'repl{{ (and (and (ConfigOptionEquals "my_deep_map_foo_menu_bool" "1") (ConfigOptionEquals "my_deep_map_foo_bar_menu_bool" "1"))) }}'
+      items:
+
+      - name: "my_deep_map_foo_bar_baz_menu_bool"
+        title: "Customize Bar Baz"
+        help_text: ""
+        type: "bool"
+        default: '0'
+        when: 'repl{{ (and (ConfigOptionEquals "my_deep_map_foo_menu_bool" "1") (ConfigOptionEquals "my_deep_map_foo_bar_menu_bool" "1")) }}'
+      - name: "my_deep_map_foo_bar_baz_qux"
+        title: "Set Baz Qux"
+        help_text: ""
+        type: "text"
+        default: '4'
+        when: 'repl{{ (and (and (ConfigOptionEquals "my_deep_map_foo_bar_menu_bool" "1") (ConfigOptionEquals "my_deep_map_foo_bar_baz_menu_bool" "1"))) }}'
+    - name: my_map_ordering
+      title: "My Map Ordering "
+      description: ""
+      items:
+
+      - name: "my_map_ordering_menu_bool"
+        title: "Customize My Map Ordering "
+        help_text: ""
+        type: "bool"
+        default: '0'
+
+      - name: "my_map_ordering_3rd_config"
+        title: "Set My Map Ordering 3Rd Config"
+        help_text: ""
+        type: "text"
+        default: 'This should be second'
+        when: 'repl{{ (ConfigOptionEquals "my_map_ordering_menu_bool" "1") }}'
+      - name: "my_map_ordering_2nd_config"
+        title: "Set My Map Ordering 2Nd Config"
+        help_text: ""
+        type: "text"
+        default: 'This should be first'
+        when: 'repl{{ (ConfigOptionEquals "my_map_ordering_menu_bool" "1") }}'
+      - name: "my_map_ordering_1st_menu"
+        title: "Set My Map Ordering 1St Menu"
+        help_text: ""
+        type: "text"
+        default: 'This should be rendered last in the list'
+        when: 'repl{{ (ConfigOptionEquals "my_map_ordering_menu_bool" "1") }}'
+    - name: my_same_name
+      title: "My Same Name "
+      description: ""
+      items:
+
+      - name: "my_same_name_menu_bool"
+        title: "Customize My Same Name "
+        help_text: ""
+        type: "bool"
+        default: '0'
+
+    - name: my_same_name_my_same_name
+      title: "My Same Name My Same Name"
+      description: ""
+      when: 'repl{{ (ConfigOptionEquals "my_same_name_menu_bool" "1") }}'
+      items:
+
+      - name: "my_same_name_my_same_name_menu_bool"
+        title: "Customize My Same Name My Same Name"
+        help_text: ""
+        type: "bool"
+        default: '0'
+        when: 'repl{{ (ConfigOptionEquals "my_same_name_menu_bool" "1") }}'
+      - name: "my_same_name_my_same_name_my_same_name"
+        title: "Set My Same Name My Same Name"
+        help_text: ""
+        type: "text"
+        default: 'mysamename'
+        when: 'repl{{ (and (ConfigOptionEquals "my_same_name_menu_bool" "1") (ConfigOptionEquals "my_same_name_my_same_name_menu_bool" "1")) }}'

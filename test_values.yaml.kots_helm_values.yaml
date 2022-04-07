@@ -1,0 +1,52 @@
+    myAwkward.key:
+      myAwkward.key: repl{{ ConfigOption `my_awkward_key`}}
+    myAwkward.slash/key:
+      myAwkward.slash/key: repl{{ ConfigOption `my_awkward_slash_key`}}
+    myBool:
+      myBool: repl{{ ConfigOption `my_bool`}}
+    myCamelCase:
+      myCamelCase: repl{{ ConfigOption `my_camel_case`}}
+    myDeepMap:
+      foo:
+        bar:
+          baz:
+            qux:
+              qux: repl{{ ConfigOption `my_deep_map_foo_bar_baz_qux`}}
+          baz_menu_bool:
+            baz_menu_bool: repl{{ ConfigOption `my_deep_map_foo_bar_baz_menu_bool`}}
+        bar_menu_bool:
+          bar_menu_bool: repl{{ ConfigOption `my_deep_map_foo_bar_menu_bool`}}
+      foo_menu_bool:
+        foo_menu_bool: repl{{ ConfigOption `my_deep_map_foo_menu_bool`}}
+    myDeepMap_menu_bool:
+      myDeepMap_menu_bool: repl{{ ConfigOption `my_deep_map_menu_bool`}}
+    myFloat:
+      myFloat: repl{{ ConfigOption `my_float`}}
+    myInt:
+      myInt: repl{{ ConfigOption `my_int`}}
+    myMap:
+      mySubValue:
+        mySubValue: repl{{ ConfigOption `my_map_my_sub_value`}}
+    myMapOrdering:
+      1stMenu:
+        1stMenu: repl{{ ConfigOption `my_map_ordering_1st_menu`}}
+      2ndConfig:
+        2ndConfig: repl{{ ConfigOption `my_map_ordering_2nd_config`}}
+      3rdConfig:
+        3rdConfig: repl{{ ConfigOption `my_map_ordering_3rd_config`}}
+    myMapOrdering_menu_bool:
+      myMapOrdering_menu_bool: repl{{ ConfigOption `my_map_ordering_menu_bool`}}
+    myMap_menu_bool:
+      myMap_menu_bool: repl{{ ConfigOption `my_map_menu_bool`}}
+    mySameName:
+      mySameName:
+        mySameName:
+          mySameName: repl{{ ConfigOption `my_same_name_my_same_name_my_same_name`}}
+      mySameName_menu_bool:
+        mySameName_menu_bool: repl{{ ConfigOption `my_same_name_my_same_name_menu_bool`}}
+    mySameName_menu_bool:
+      mySameName_menu_bool: repl{{ ConfigOption `my_same_name_menu_bool`}}
+    myString:
+      myString: repl{{ ConfigOption `my_string`}}
+    my_snake_case:
+      my_snake_case: repl{{ ConfigOption `my_snake_case`}}
